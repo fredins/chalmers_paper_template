@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[]{graphicx}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry}
+\usepackage{parskip}
+\usepackage[all]{nowidow}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[swedish]{babel}
+
+\frenchspacing
+\linespread{1.5}
+\setlength{\parindent}{0cm}
+
+\usepackage[
+citestyle=numeric,
+style=ieee,
+]{biblatex}
+\addbibresource{ref.bib} 
+\DefineBibliographyStrings{swedish}{
+  andothers = {et\addabbrvspace al\adddot},
+  jourvol = {vol\adddot},
+  pages = {ss\adddot},
+  urlseen = {Hamtad}
+}
+\DeclareFieldFormat{url}{[Online]\adddot\addspace Tillganglig: \url{#1}
+  \iffieldundef{urlyear}{}{\addcomma}
+  \else{\adddot}
+}
+\DeclareFieldFormat{urldate}{Hamtad: #1}
+\DeclareFieldFormat{doi}{\href{https://doi.org/#1}{doi: #1\adddot}}
+
+% buggy package
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref}
+\hypersetup{ 	
+    pdfsubject = {},
+    pdftitle = {},
+    pdfauthor = {Martin Fredin}
+}
+
+\title{}
+\author{Martin Fredin}
+
+\begin{document} 
+\maketitle
+
+\printbibliography[title=Referenser]
+\end{document}
